@@ -13,12 +13,13 @@
             $_name = $data['name'];
             $_email = $data['email'];    
             $_statusValu = $data['statusValu'];
+    
 
             if(!$_name){
                 echo "Plz Name Field is Data Input". "<br>";
             }if(!$_email){
                 echo "Plz email Field is email Input" . "<br>";
-            }if(!$_statusValu){
+            }if($_statusValu==""){
                 echo "Plz statusValu Field is Data Input" . "<br>";
             }
             else{
@@ -30,12 +31,12 @@
 
         function show(){
              $result = $this->conn->query("SELECT * FROM tbl_data_input");
-
             return $result;
-
-
         }
-
+         function delete($id){
+             $result = $this->conn->query("DELETE FROM tbl_data_input WHERE id='$id'");
+            //  return $result;
+        }
 
 
 
